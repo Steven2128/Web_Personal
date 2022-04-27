@@ -1,9 +1,27 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block title %}Acerca de{% endblock title %}
 
-{% block content %}
-<h2>Acerca de</h2>
+{% block background %}{% static 'img/about-bg.jpg' %}{% endblock background %}
 
-<p>Me llamo Stephen y soy desarrollador</p>
+{% block header %}
+    <h1>Acerca de</h1>
+    <span class="subheading">Biografía</span>
+{% endblock header %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{% static 'img/me.jpg' %}" alt="">
+        </div>
+        <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading">Stephen Alarcón</h2>
+            <p>Nacido en... lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet
+                pariatur
+                voluptates odit, fuga atque ea nobis sit soluta odio.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates
+                odit...</p>
+        </div>
+    </div>
 {% endblock content %}

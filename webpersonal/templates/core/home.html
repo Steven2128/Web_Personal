@@ -1,9 +1,10 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block title %}Portada{% endblock title %}
+{% block background %}{% static 'img/home-bg.jpg' %}{% endblock background %}
 
-{% block content %}
-<h2>Portada</h2>
-
-<p>Esto es la portada</p>
-{% endblock content %}
+{% block header %}
+    <h1>Stephen Alarcón</h1>
+    <span class="subheading">Desarrollador de Software</span>
+{% endblock header %}
