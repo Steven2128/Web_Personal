@@ -1,6 +1,6 @@
-#Django
+# Django
 from django.contrib import admin
-#Models
+# Models
 from .models import *
 
 admin.site.register(Project)
