@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-uhvw=py%4^00xs0to*e5yx3*9m2-0u$1z7!z4y2(0nsg&owp5q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['stephen-alarcon-portfolio.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['stephen-alarcon-portfolio.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -83,8 +83,8 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_NAME'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': 'db',
-        'PORT': 5432,
+        'HOST': os.environ.get('POSTGRES_HOST'),
+        'PORT': os.environ.get('POSTGRES_PASSWORD'),
     }
 }
 
