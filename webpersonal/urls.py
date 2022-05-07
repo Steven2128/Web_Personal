@@ -3,10 +3,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+# Views
+from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls'), name='core'),
+    path('', home, name='home'),
+    path('about/', about, name='about'),
+    path('contact/', contact, name='contact'),
     path('portfolio/', include('portfolio.urls'), name='portfolio'),
 ]
 if settings.DEBUG:
