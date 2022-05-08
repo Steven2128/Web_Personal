@@ -20,7 +20,9 @@
         <div class="col-lg-5 col-md-8">
             <h2 class="section-heading title">{{ project.title }}</h2>
             <p>{{ project.description }}</p>
-            <p><a href="#">Más información</a></p>
+            {% if project.link %}
+                <p><a href="{{ project.link }}">Más información</a></p>
+            {% endif %}
         </div>
     </div>
     {% endfor %}
