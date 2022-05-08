@@ -10,13 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import django_heroku
 import os
 from pathlib import Path
 import cloudinary
 import cloudinary_storage
 
-#...
-#...rest will be same
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,13 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-uhvw=py%4^00xs0to*e5yx3*9m2-0u$1z7!z4y2(0nsg&owp5q'
+# SECRET_KEY = 'django-insecure-uhvw=py%4^00xs0to*e5yx3*9m2-0u$1z7!z4y2(0nsg&owp5q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = ['stephen-alarcon-portfolio.herokuapp.com', '127.0.0.1']
-
 
 # Application definition
 
@@ -138,7 +136,6 @@ CLOUDINARY_STORAGE = {
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
@@ -153,3 +150,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
